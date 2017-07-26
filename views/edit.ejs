@@ -1,0 +1,19 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加用户</title>
+</head>
+<body>
+<form action="/user/update" method="get">
+    <% for(var i=0;i<data.length;i++){ %>
+    <p>用户：<input type="text" name="username" value="<%=data[i].name%>"></p>
+    <p>年龄：<input type="text" name="age" value="<%=data[i].age%>"></p>
+    <p><input type="hidden" name="id" value="<%=data[i].id%>"></p>
+    <p><input type="submit"></p>
+    <%}%>
+</form>
+</body>
+</html>

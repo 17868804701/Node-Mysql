@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script typet="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <style>
+        tr td{
+            border: 1px solid gray;
+            border-spacing: 0px;
+        }
+    </style>
+</head>
+<body>
+<a href="/add">增加用户</a>
+<table style="border: 1px solid gray;width: 300px;margin-top: 10px" cellspacing="0">
+    <tr>
+        <td>id</td>
+        <td>用户</td>
+        <td>年龄</td>
+        <td colspan="2" style="text-align: center">操作</td>
+    </tr>
+    <% for(var i=0;i<data.length;i++){ %>
+    <tr>
+        <td><%=data[i].id%></td>
+        <td><%=data[i].name%></td>
+        <td><%=data[i].age%></td>
+        <td style="text-align: center"><a href="/user/edit?id=<%=data[i].id%>">修改</a></td>
+        <td style="text-align: center"><a href="/del?id=<%=data[i].id%>" >删除</a></td>
+    </tr>
+    <%}%>
+</table>
+
+</body>
+</html>
